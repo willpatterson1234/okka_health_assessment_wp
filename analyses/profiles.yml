@@ -1,0 +1,6 @@
+okka_assessment:
+  target: local
+  outputs:
+  local:
+    type: duckdb
+    path: 'okka_assessment.duckdb'

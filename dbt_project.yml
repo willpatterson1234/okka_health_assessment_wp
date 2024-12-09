@@ -1,0 +1,42 @@
+name: 'okka_assessment_wp'
+version: '1.0.0'
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'okka_assessment_wp'
+
+# These configurations specify where dbt should look for different types of files.
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+seeds:
+  okka_assessment_wp: 
+    quote_columns: false
+    reviews:
+      +column_types:
+        id: bigint
+        listing_id: bigint
+    listings_20240906:
+      +column_types:
+        price: varchar
+        id: bigint
+        scrape_id: bigint
+    listings_20240614:
+      +column_types:
+        price: varchar
+        id: bigint
+        scrape_id: bigint
+
+# Configuring models
+models:
+  okka_assessment_wp:
+   +materialized: view
+   src:
+    +materialized: table

@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: dev
+    tables:
+      - name: listings_20240614
+        identifier: src_listings_1
+      - name: listings_20240906
+        identifier: src_listings_2
+      - name: reviews
+        identifier: src_reviews

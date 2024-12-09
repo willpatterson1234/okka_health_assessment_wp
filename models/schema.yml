@@ -1,0 +1,19 @@
+version: 2
+
+models: 
+  - name: src_listings_1
+    description: "src listings 1 table"
+    columns: 
+      - name: id
+        description: "Unique identifier for each listing" 
+        tests: 
+          - unique
+          - not_null
+  - name: src_listings_2
+    description: "src listings 2 table"
+    columns: 
+      - name: id
+        description: "Unique identifier for each listing" 
+        tests: 
+          - unique
+          - not_null
